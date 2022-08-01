@@ -6,7 +6,7 @@ const simleGit=require('simple-git')
 
 
 
-const DATE=moment().format();
+const DATE=moment().subtract(5,'d').format();
 const data={
     date:DATE
 }
@@ -14,4 +14,4 @@ const data={
 jsonfile.writeFile(FILE_PATH,data);
 
 // git commit --date="11/5/2022"
-simleGit.simpleGit().add([FILE_PATH]).commit(DATE,{'--date':DATE})
+simleGit.simpleGit().add([FILE_PATH]).commit(DATE,{'--date':DATE}) 
